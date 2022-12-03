@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container responsive">
+        <header class="header">
+            <i id="menu-icon" class="fa fa-bars" aria-label="Open Menu"></i>
+            <h1>Travel Application</h1>
+            <i id="search-icon" class="fa fa-search" aria-label="Search Text in Bogs"></i>
+        </header>
+
+        <div class="form">
+            <h3>Enter Source</h3> <input type="text" id="from" placeholder="Travelling from">
+            <h3>Enter Destination</h3> <input type="text" id="to" placeholder="Travelling to">
+            <h3>Enter Date Of Leaving Place</h3> <input value="2023-01-01" id="date" type="date" />
+            <p id="error"></p>
+            <button onclick="Client.handleSubmit()">Submit</button>
+        </div>
+
+        <div class="content">
+            <div id="travel-list"></div>
+        </div>
+
+        <div class="terms">
+            <h3>Terms and Conditions </h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+
+        <div class="policy">
+            <h3>Luggage Policy </h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+
+
+        <footer class="footer">
+            <p>Travel Application Template Built With By <b> Akash Shukla </b></p>
+            <div>
+                <i class="fa fa-linkedin" aria-label="linked icon"></i>
+                <i class="fa fa-instagram" aria-label="instagram icon"></i>
+                <i class="fa fa-twitter" aria-label="twitter icon"></i>
+                <i class="fa fa-whatsapp" aria-label="whatsapp icon"></i>
+            </div>
+        </footer>
+    </div>
+</body>
+<script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js');
+      });
+    }
+    window.onload = function() {
+        Client.showSavedTravelList();
+    }
+</script>
+</html>
